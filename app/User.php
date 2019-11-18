@@ -43,7 +43,7 @@ class User extends Authenticatable
             # code...
             return true;
         }
-        abort(401,'this action is unauthorize')
+        abort(403,'this action is unauthorized :(');
     }
 
     public function roles()
@@ -54,7 +54,7 @@ class User extends Authenticatable
 
     public function hasAnyRole($roles)
     {
-        if (isArray($roles)) {
+        if (is_array($roles)) {
             # code...
             foreach ($roles as $rol) {
                 # code...
@@ -64,8 +64,10 @@ class User extends Authenticatable
                 }
             }
         } else {
-            $this->hasRole($roles);
-            return true;
+            if($this->hasRole($roles)){
+
+                return true;
+            }
         }
         return false;
     }
