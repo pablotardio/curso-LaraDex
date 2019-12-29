@@ -4,3 +4,8 @@ git add README.md
 git commit -m "first commit"
 git remote add origin https://github.com/pablotardio/LaraDex.git
 git push -u origin master
+
+Comandos
+npm run dev --compila Codigos de javascript
+
+npm run watch --compila en tiempo real, activa servicio compilador
